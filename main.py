@@ -66,7 +66,7 @@ from routers.cancer import cancer
 from routers.ipad import ipad
 from routers.fakenews import fakenews
 from routers.confusedcat import confusedcat
-
+# web: uvicorn main:app --reload --host=0.0.0.0 --port=${PORT:-5000}
 app = FastAPI()
 
 app.include_router(router=delete)

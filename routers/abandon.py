@@ -1,18 +1,16 @@
 from fastapi import APIRouter
 import os
-import random
-from fastapi.responses import FileResponse, Response, StreamingResponse
+from fastapi.responses import StreamingResponse
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw 
 from io import BytesIO
-import string
 
 abandon = APIRouter()
 
-def generate_image(text):
+async def generate_image(text):
     cwd = os.getcwd()
-    print(cwd)
+
     img = Image.open(f"{cwd}/assets/abandon.bmp")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(f"{cwd}/fonts/roboto-medium.ttf", 20)
@@ -26,7 +24,7 @@ def generate_image(text):
     return d
 
 @abandon.get("/api/abandon/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
-def gen_abandon_img(text : str):
-    file = generate_image(text)
+async def gen_abandon_img(text : str):
+    file = await generate_image(text)
     
     return StreamingResponse(file, media_type="image/png")

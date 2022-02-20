@@ -2,13 +2,36 @@
 
 I gave up on the discord on so im making an api for memes using python (Fastapi)
 
-
 [Api Docs:](https://memegenapi.herokuapp.com/docs/)
+
+URL = https://memegenapi.herokuapp.com/
 
 Working Endpoints:
 
- `GET` `/api/abandon` 
-` https://memegenapi.herokuapp.com/api/abandon?text=[the+text+you+want]`
+```
+GET /api/abandon
+
+Params:
+    Text : str
+```
+```
+GET /api/aborted
+
+Params:
+    Image : str (url)
+```
+```
+GET /api/affect
+
+Params:
+    Image : str (url)
+```
+```
+GET /api/armor
+
+Params:
+    Text : str
+```
 
 The api cant do any generating yet but those are the current endpoints.
 

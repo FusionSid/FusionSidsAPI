@@ -7,7 +7,13 @@ from PIL import ImageDraw
 from io import BytesIO
 import textwrap
 
-armor = APIRouter()
+tags_metadata = [
+    {
+        "name": "Armor Meme",
+    }
+]
+
+armor = APIRouter(tags=tags_metadata)
 
 async def generate_image(text):
     cwd = os.getcwd()

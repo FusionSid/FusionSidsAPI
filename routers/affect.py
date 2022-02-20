@@ -5,7 +5,13 @@ from utils import get_url_image
 from PIL import Image
 import os
 
-affect = APIRouter()
+tags_metadata = [
+    {
+        "name": "Affect Meme",
+    }
+]
+
+affect = APIRouter(tags=tags_metadata)
 
 async def generate_image(image_url : str):
     profile_image = await get_url_image(image_url)

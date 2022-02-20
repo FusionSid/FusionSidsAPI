@@ -66,8 +66,32 @@ from routers.cancer import cancer
 from routers.ipad import ipad
 from routers.fakenews import fakenews
 from routers.confusedcat import confusedcat
+
 # web: uvicorn main:app --reload --host=0.0.0.0 --port=${PORT:-5000}
-app = FastAPI()
+
+description = """
+### Made by FusionSid
+
+[My Github](https://github.com/FusionSid)
+
+#### Source Code:
+[https://github.com/FusionSid/ImageGeneratorAPI](https://github.com/FusionSid/ImageGeneratorAPI)
+
+#### Contact:
+Discord: FusionSid#3645
+
+#### LICENCE:
+"""
+
+app = FastAPI(
+    title = "Image Generation API",
+    description=description,
+    license_info={
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT",
+    },
+
+)
 
 # app.include_router(router=delete)
 # app.include_router(router=rip)

@@ -6,7 +6,12 @@ from PIL import ImageFont
 from PIL import ImageDraw 
 from io import BytesIO
 
-abandon = APIRouter()
+tags_metadata = [
+    {
+        "name": "Abandon Meme",
+    }
+]
+abandon = APIRouter(tags=tags_metadata)
 
 async def generate_image(text):
     cwd = os.getcwd()

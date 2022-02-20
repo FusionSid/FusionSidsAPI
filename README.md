@@ -1,46 +1,57 @@
-## Meme Image Generator Api
+# Meme Image Generator API
 
 I gave up on the discord on so im making an api for memes using python (Fastapi)
 
-[Api Docs:](https://memegenapi.herokuapp.com/docs/)
+If you look in the [assets](https://github.com/FusionSid/ImageGeneratorAPI/tree/master/assets) folder you will see a list of images/memes im gonna be using for this.
 
-URL = https://memegenapi.herokuapp.com/
+Currently theres 67 images in that folder,
+I plan on having 69 endpoints so I need to find 2 more memes if you find something good:
 
-Working Endpoints:
+DM me on Discord: `FusionSid#3645`
 
-```
-GET /api/abandon
+## [Api Docs:](https://memegenapi.herokuapp.com/docs/)
 
-Params:
-    Text : str
-```
-```
-GET /api/aborted
+---
+<br >
 
-Params:
-    Image : str (url)
-```
-```
-GET /api/affect
+### API URL: [https://memegenapi.herokuapp.com/](https://memegenapi.herokuapp.com/)
+<br >
 
-Params:
-    Image : str (url)
-```
-```
-GET /api/armor
+### **Working Endpoints:**
+<br>
 
-Params:
-    Text : str
-```
+> `api/abandon`
 
-The api cant do any generating yet but those are the current endpoints.
+---
+>`api/aborted`
 
-If you look in the assets folder you will see a list of images/memes im gonna be using for this.
+---
+
+> `api/affect`
+
+---
+
+> `api/armor`
 
 
-Example:
+---
 
-Url = `https://memegenapi.herokuapp.com/api/abandon/?text=I+like+light+themed+editors`
-Response:
+<br >
+
+## Example:
+
+<br >
+
+### URL:
+
+[https://memegenapi.herokuapp.com/api/abandon/?text=I+like+light+themed+editors]()
+
+---
+
+### Response:
+
+---
 
 ![](https://memegenapi.herokuapp.com/api/abandon/?text=I+prefer+light+themed+editors)
+
+---

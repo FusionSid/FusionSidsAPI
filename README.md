@@ -36,3 +36,11 @@ Params:
 The api cant do any generating yet but those are the current endpoints.
 
 If you look in the assets folder you will see a list of images/memes im gonna be using for this.
+
+
+Example:
+
+Url = `https://memegenapi.herokuapp.com/api/abandon/?text=I+like+light+themed+editors`
+Response:
+
+![](https://memegenapi.herokuapp.com/api/abandon/?text=I+prefer+light+themed+editors)

@@ -6,14 +6,27 @@ from PIL import ImageFont
 from PIL import ImageDraw 
 from io import BytesIO
 
+
+# Title for docs
 tags_metadata = [
     {
         "name": "Abandon Meme",
     }
 ]
+
 abandon = APIRouter(tags=tags_metadata)
 
+# Image generate function
 async def generate_image(text):
+    """
+    This function generate an `Abandon` Meme
+
+    Args:
+        text (str) : The text to put on the meme
+
+    Returns:
+        BytesIO image
+    """
     cwd = os.getcwd()
 
     img = Image.open(f"{cwd}/assets/abandon.bmp")

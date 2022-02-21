@@ -67,8 +67,8 @@ from routers.ipad import ipad
 from routers.fakenews import fakenews
 from routers.confusedcat import confusedcat
 
-# web: uvicorn main:app --reload --host=0.0.0.0 --port=${PORT:-5000}
 
+# Description for api docs
 description = """
 ### Made by FusionSid
 
@@ -83,6 +83,7 @@ Discord: FusionSid#3645
 #### LICENCE:
 """
 
+# Creates an instance of the FastAPI class
 app = FastAPI(
     title = "Image Generation API",
     description=description,
@@ -92,6 +93,8 @@ app = FastAPI(
     },
 
 )
+
+# Including all the endpoints
 
 # app.include_router(router=delete)
 # app.include_router(router=rip)
@@ -113,7 +116,7 @@ app.include_router(router=affect)
 # app.include_router(router=mom)
 # app.include_router(router=corporate)
 # app.include_router(router=hitler)
-# app.include_router(router=wanted)
+app.include_router(router=wanted)
 # app.include_router(router=spank)
 # app.include_router(router=gay)
 # app.include_router(router=ohno)

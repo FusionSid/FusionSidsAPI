@@ -7,11 +7,11 @@ from fastapi.responses import StreamingResponse
 
 tags = [
     {
-        "name" : "gun"
+        "name" : "Gun Image"
     }
 ]
 
-gun = APIRouter()
+gun = APIRouter(tags=tags)
 
 async def generate_image(image_url : str):
     profile_image = await get_url_image(image_url)

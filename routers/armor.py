@@ -22,7 +22,6 @@ async def generate_image(text):
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(f"{cwd}/fonts/roboto-medium.ttf", 20)
 
-    # draw.text((45, 400),text, fill="black", font=font, align='center')
     w, h = 270, 360
     lines = textwrap.wrap(text, width=18)
     y_text = h

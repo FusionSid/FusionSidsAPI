@@ -15,26 +15,6 @@ DM me on Discord: `FusionSid#3645`
 <br >
 
 ### API URL: [https://memegenapi.herokuapp.com/](https://memegenapi.herokuapp.com/)
-<br >
-
-### **Working Endpoints:**
-<br>
-
-> `api/abandon`
-
----
->`api/aborted`
-
----
-
-> `api/affect`
-
----
-
-> `api/armor`
-
-
----
 
 <br >
 

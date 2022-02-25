@@ -1,6 +1,6 @@
 # Meme Image Generator API
 
-I gave up on the discord on so im making an api for memes using python (Fastapi)
+I gave up on the discord image api so im now making an api for memes and images using python (Fastapi)
 
 If you look in the [assets](https://github.com/FusionSid/ImageGeneratorAPI/tree/master/assets) folder you will see a list of images/memes im gonna be using for this.
 

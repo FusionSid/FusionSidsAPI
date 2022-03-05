@@ -82,7 +82,7 @@ description = """
 [My Github](https://github.com/FusionSid)
 
 #### Source Code:
-[https://github.com/FusionSid/ImageGeneratorAPI](https://github.com/FusionSid/SidsApi)
+[https://github.com/FusionSid/FusionSidsAPI](https://github.com/FusionSid/FusionSidsAPI)
 
 #### Contact:
 Discord: FusionSid#3645

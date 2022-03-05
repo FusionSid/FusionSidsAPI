@@ -82,7 +82,7 @@ description = """
 [My Github](https://github.com/FusionSid)
 
 #### Source Code:
-[https://github.com/FusionSid/ImageGeneratorAPI](https://github.com/FusionSid/ImageGeneratorAPI)
+[https://github.com/FusionSid/ImageGeneratorAPI](https://github.com/FusionSid/SidsApi)
 
 #### Contact:
 Discord: FusionSid#3645
@@ -92,7 +92,7 @@ Discord: FusionSid#3645
 
 # Creates an instance of the FastAPI class
 app = FastAPI(
-    title = "Image Generation API",
+    title = "Sids's API",
     description=description,
     license_info={
         "name": "MIT",

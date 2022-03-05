@@ -1,6 +1,7 @@
-# Meme Image Generator API
+# Sids's API
 
-I gave up on the discord image api so im now making an api for memes and images using python (Fastapi)
+Ill make a readme later lol
+I renamed it from Image generation api to sids api since i plan on adding more than just images to this
 
 If you look in the [assets](https://github.com/FusionSid/ImageGeneratorAPI/tree/master/assets) folder you will see a list of images/memes im gonna be using for this.
 

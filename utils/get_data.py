@@ -1,6 +1,4 @@
 import aiohttp
-import aiofiles
-
 
 async def get_url_json(url, data=None):
     """
@@ -21,27 +19,6 @@ async def get_url_json(url, data=None):
                 print(e)
                 response = resp
     return response
-
-
-async def save_url_image(url, name, data = None):
-    """
-    This function makes a get request to a url and returns the image and saves
-        it to a file in the `tempstorage` directory
-
-    Args:
-        url (str) : The url to make a request to
-        data (Dict, optional) : This is a dictionary of any extra params to send the request
-    
-    Returns:
-        str : The file path for the image returned
-    """
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url, data=data) as resp:
-                f = await aiofiles.open(f'./tempstorage/{name}.png', mode='wb')
-                await f.write(await resp.read())
-                await f.close()
-    
-    return f'./tempstorage/{name}.png'
 
 
 async def get_url_image(url, data = None):

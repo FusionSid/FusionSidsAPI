@@ -45,7 +45,7 @@ async def generate_meme(reddit_info):
     if reddit_info:
         return {
             "url" : url,
-            "title  " : name,
+            "title" : name,
             "author" : str(author.name),
             "upvotes" : ups,
         }

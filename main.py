@@ -94,7 +94,7 @@ Discord: FusionSid#3645
 
 # Creates an instance of the FastAPI class
 app = FastAPI(
-    title = "FusionSidsAPI API",
+    title = "FusionSidsAPI",
     description=description,
     license_info={
         "name": "MIT",

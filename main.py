@@ -127,6 +127,34 @@ app = FastAPI(
 
 )
 
+@app.get("/")
+async def home():
+  url_list = [route.path for route in app.routes]
+
+  url_list.remove("/openapi.json")
+  url_list.remove("/docs/oauth2-redirect")
+  url_list.remove("/redoc")
+  url_list.remove("/")
+
+  return {
+    "docs_url" : "https://fusionsidapi.herokuapp.com/docs",
+    "endpoints" : url_list
+  }
+
+@app.get("/api")
+async def home():
+  url_list = [route.path for route in app.routes]
+
+  url_list.remove("/openapi.json")
+  url_list.remove("/docs/oauth2-redirect")
+  url_list.remove("/redoc")
+  url_list.remove("/")
+
+  return {
+    "docs_url" : "https://fusionsidapi.herokuapp.com/docs",
+    "endpoints" : url_list
+  }
+
 # Including all the endpoints:
 
 # Other

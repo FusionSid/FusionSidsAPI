@@ -2,14 +2,13 @@ x 8ball
 x qrcode
 x roast
 x random meme
+x complement
 
 fact
 trivia
 ascii
 password
 why bot stuff
-complement
-insult
 sherlock
 texttobinary
 binary to text

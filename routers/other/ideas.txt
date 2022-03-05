@@ -1,0 +1,16 @@
+8ball
+qrcode
+roast
+fact
+trivia
+ascii
+password
+random meme
+why bot stuff
+complement
+insult
+sherlock
+texttobinary
+binary to text
+hex to text
+text to hex

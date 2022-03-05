@@ -96,6 +96,7 @@ from routers.image.abandon import abandon
 from routers.other._8ball import eightball
 from routers.other.qrcode import qrcode
 from routers.other.roast import roast
+from routers.other.random_meme import meme
 
 # Description for api docs
 description = """
@@ -128,9 +129,10 @@ app = FastAPI(
 # Including all the endpoints:
 
 # Other
-app.include_router(router=eightball)
-app.include_router(router=qrcode)
 app.include_router(router=roast)
+app.include_router(router=qrcode)
+app.include_router(router=eightball)
+app.include_router(router=meme)
 
 # Image
 

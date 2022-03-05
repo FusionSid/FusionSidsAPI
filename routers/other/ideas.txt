@@ -1,11 +1,12 @@
 x 8ball
 x qrcode
 x roast
+x random meme
+
 fact
 trivia
 ascii
 password
-random meme
 why bot stuff
 complement
 insult

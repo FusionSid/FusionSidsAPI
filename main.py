@@ -1,72 +1,79 @@
 from fastapi import FastAPI
-from routers.image.delete import delete
-from routers.image.rip import rip
-from routers.image.humansgood import humansgood
-from routers.image.armor import armor
-from routers.image.plan import plan
-from routers.image.brazzers import brazzers
-from routers.image.facts import facts
-from routers.image.batslap import batslap
-from routers.image.kimborder import kimborder
-from routers.image.gun import gun
-from routers.image.garfield import garfield
-from routers.image.unpopular import unpopular
-from routers.image.affect import affect
-from routers.image.hundred import hundred
-from routers.image.whothisis import whothisis
-from routers.image.violence import violence
-from routers.image.screams import screams
-from routers.image.mom import mom
-from routers.image.corporate import corporate
-from routers.image.hitler import hitler
-from routers.image.wanted import wanted
-from routers.image.spank import spank
-from routers.image.gay import gay
-from routers.image.ohno import ohno
-from routers.image.floor import floor
-from routers.image.emergencymeeting import emergencymeeting
-from routers.image.cheating import cheating
-from routers.image.boo import boo
-from routers.image.jail import jail
-from routers.image.satan import satan
-from routers.image.humanity import humanity
-from routers.image.trash import trash
-from routers.image.brain import brain
-from routers.image.disability import disability
-from routers.image.presentation import presentation
-from routers.image.aborted import aborted
-from routers.image.ugly import ugly
-from routers.image.fuck import fuck
-from routers.image.master import master
-from routers.image.failure import failure
-from routers.image.excuseme import excuseme
-from routers.image.bongocat import bongocat
-from routers.image.piccolo import piccolo
-from routers.image.farmer import farmer
-from routers.image.door import door
-from routers.image.ban import ban
-from routers.image.expandingwwe import expandingwwe
-from routers.image.surprised import surprised
-from routers.image.vr import vr
-from routers.image.inator import inator
-from routers.image.cry import cry
-from routers.image.nothing import nothing
-from routers.image.laid import laid
-from routers.image.obama import obama
-from routers.image.reticle import reticle
-from routers.image.bed import bed
-from routers.image.justpretending import justpretending
-from routers.image.note import note
-from routers.image.abandon import abandon
-from routers.image.no_entry import no_entry
-from routers.image.goggles import goggles
-from routers.image.changemymind import changemymind
-from routers.image.balloon import balloon
-from routers.image.cancer import cancer
-from routers.image.ipad import ipad
-from routers.image.fakenews import fakenews
-from routers.image.confusedcat import confusedcat
 
+# Image
+
+# from routers.image.delete import delete
+# from routers.image.rip import rip
+# from routers.image.humansgood import humansgood
+from routers.image.armor import armor
+# from routers.image.plan import plan
+from routers.image.brazzers import brazzers
+# from routers.image.facts import facts
+# from routers.image.batslap import batslap
+# from routers.image.kimborder import kimborder
+from routers.image.gun import gun
+# from routers.image.garfield import garfield
+# from routers.image.unpopular import unpopular
+from routers.image.affect import affect
+# from routers.image.hundred import hundred
+# from routers.image.whothisis import whothisis
+from routers.image.violence import violence
+# from routers.image.screams import screams
+# from routers.image.mom import mom
+# from routers.image.corporate import corporate
+# from routers.image.hitler import hitler
+from routers.image.wanted import wanted
+# from routers.image.spank import spank
+# from routers.image.gay import gay
+# from routers.image.ohno import ohno
+# from routers.image.floor import floor
+# from routers.image.emergencymeeting import emergencymeeting
+# from routers.image.cheating import cheating
+# from routers.image.boo import boo
+# from routers.image.jail import jail
+# from routers.image.satan import satan
+# from routers.image.humanity import humanity
+from routers.image.trash import trash
+# from routers.image.brain import brain
+# from routers.image.disability import disability
+# from routers.image.presentation import presentation
+from routers.image.aborted import aborted
+# from routers.image.ugly import ugly
+# from routers.image.fuck import fuck
+# from routers.image.master import master
+# from routers.image.failure import failure
+# from routers.image.excuseme import excuseme
+from routers.image.bongocat import bongocat
+# from routers.image.piccolo import piccolo
+# from routers.image.farmer import farmer
+# from routers.image.door import door
+# from routers.image.ban import ban
+# from routers.image.expandingwwe import expandingwwe
+from routers.image.surprised import surprised
+# from routers.image.vr import vr
+# from routers.image.inator import inator
+# from routers.image.cry import cry
+# from routers.image.nothing import nothing
+# from routers.image.laid import laid
+# from routers.image.obama import obama
+# from routers.image.reticle import reticle
+# from routers.image.bed import bed
+# from routers.image.justpretending import justpretending
+# from routers.image.note import note
+from routers.image.abandon import abandon
+# from routers.image.no_entry import no_entry
+# from routers.image.goggles import goggles
+# from routers.image.changemymind import changemymind
+# from routers.image.balloon import balloon
+# from routers.image.cancer import cancer
+# from routers.image.ipad import ipad
+# from routers.image.fakenews import fakenews
+# from routers.image.confusedcat import confusedcat
+
+# Other
+from routers.other._8ball import eightball
+from routers.other.qrcode import qrcode
+from routers.other.roast import roast
 
 # Description for api docs
 description = """
@@ -94,7 +101,10 @@ app = FastAPI(
 
 )
 
-# Including all the endpoints
+# Including all the endpoints:
+
+
+# Image
 
 # app.include_router(router=delete)
 # app.include_router(router=rip)
@@ -124,7 +134,7 @@ app.include_router(router=wanted)
 # app.include_router(router=emergencymeeting)
 # app.include_router(router=cheating)
 # app.include_router(router=boo)
-app.include_router(router=jail)
+# app.include_router(router=jail)
 # app.include_router(router=satan)
 # app.include_router(router=humanity)
 app.include_router(router=trash)
@@ -157,9 +167,14 @@ app.include_router(router=surprised)
 app.include_router(router=abandon)
 # app.include_router(router=no_entry)
 # app.include_router(router=goggles)
-app.include_router(router=changemymind)
+# app.include_router(router=changemymind)
 # app.include_router(router=balloon)
 # app.include_router(router=cancer)
 # app.include_router(router=ipad)
 # app.include_router(router=fakenews)
 # app.include_router(router=confusedcat)
+
+# Other
+app.include_router(router=eightball)
+app.include_router(router=qrcode)
+app.include_router(router=roast)

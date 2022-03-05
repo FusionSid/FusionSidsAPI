@@ -1,6 +1,6 @@
-8ball
-qrcode
-roast
+x 8ball
+x qrcode
+x roast
 fact
 trivia
 ascii

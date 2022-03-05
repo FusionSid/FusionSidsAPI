@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from utils import update_db
 import random
 import json
 
@@ -13,6 +14,7 @@ compliment = APIRouter(tags=tags_metadata)
 
 @compliment.get("/api/compliment/")
 async def gen_compliment():
+    await update_db('compliment')
     with open('./utils/compliment.json') as f:
         compliment_list = json.load(f)
     return {

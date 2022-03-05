@@ -32,7 +32,8 @@ async def get_url_image(url, data = None):
     """
     async with aiohttp.ClientSession() as session:
         async with session.get(url, data=data) as resp:
-                return await resp.read()
+                resp = await resp.read()
+    return resp
 
 
 async def post_get_json(url, data=None):

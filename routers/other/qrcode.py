@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from utils import update_db
 from io import BytesIO
 from fastapi.responses import StreamingResponse
 import qrcode as qrc
@@ -32,6 +33,7 @@ async def generate_qrcode(url):
 
 @qrcode.get("/api/qrcode/")
 async def gen_qrcode(link : str):
+    await update_db('qrcode')
     file = await generate_qrcode(link)
 
     return StreamingResponse(file, media_type="image/png")

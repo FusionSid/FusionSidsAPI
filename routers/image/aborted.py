@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from io import BytesIO
 from fastapi.responses import StreamingResponse
 from utils import get_url_image
+from utils import update_db
 from PIL import Image
 import os
 
@@ -34,6 +35,7 @@ async def generate_image(image_url : str):
 
 @aborted.get("/api/aborted/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 async def gen_aborted_img(image_url : str):
+    await update_db('aborted')
     
     file = await generate_image(image_url)
 

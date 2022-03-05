@@ -4,6 +4,7 @@ from utils import get_url_image
 import os
 import random
 from fastapi import APIRouter
+from utils import update_db
 from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
 
@@ -56,6 +57,7 @@ async def generate_meme(reddit_info):
 
 @meme.get("/api/meme/")
 async def gen_meme(reddit_json_info : bool = False):
+    await update_db('meme')
     reddit_meme = await generate_meme(reddit_json_info)
 
     if reddit_json_info:

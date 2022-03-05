@@ -2,6 +2,7 @@ from fastapi import APIRouter
 import os
 from fastapi.responses import StreamingResponse
 from PIL import Image
+from utils import update_db
 from PIL import ImageFont
 from PIL import ImageDraw 
 from io import BytesIO
@@ -50,6 +51,7 @@ async def generate_image(text):
 
 @surprised.get("/api/surprised/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 async def gen_surprised_img(text : str):
+    await update_db('surprised')
     file = await generate_image(text)
     
     return StreamingResponse(file, media_type="image/png")

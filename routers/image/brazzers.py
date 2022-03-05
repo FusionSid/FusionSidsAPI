@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from io import BytesIO
 from fastapi.responses import StreamingResponse
 from utils import get_url_image
+from utils import update_db
 from PIL import Image
 import os
 
@@ -36,6 +37,8 @@ async def generate_image(image_url : str):
 
 @brazzers.get("/api/brazzers/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 async def gen_brazzers_img(image_url):
+    await update_db('brazzers')
+
     file = await generate_image(image_url)
 
     return StreamingResponse(file, media_type="image/png")

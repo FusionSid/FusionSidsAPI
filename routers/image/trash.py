@@ -3,6 +3,7 @@ from io import BytesIO
 from fastapi.responses import StreamingResponse
 from utils import get_url_image
 from PIL import Image
+from utils import update_db
 import os
 
 tags_metadata = [
@@ -34,6 +35,7 @@ async def generate_image(image_url : str):
 
 @trash.get("/api/trash/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 async def gen_trash_img(image_url : str):
+    await update_db('trash')
     
     file = await generate_image(image_url)
 

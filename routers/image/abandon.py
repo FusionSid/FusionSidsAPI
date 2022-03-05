@@ -3,6 +3,7 @@ import os
 from fastapi.responses import StreamingResponse
 from PIL import Image
 from PIL import ImageFont
+from utils import update_db
 from PIL import ImageDraw 
 from io import BytesIO
 
@@ -43,6 +44,8 @@ async def generate_image(text):
 
 @abandon.get("/api/abandon/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 async def gen_abandon_img(text : str):
+    await update_db('abandon')
+    
     file = await generate_image(text)
     
     return StreamingResponse(file, media_type="image/png")

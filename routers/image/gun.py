@@ -4,6 +4,7 @@ import os
 from PIL import Image
 from utils import get_url_image
 from fastapi.responses import StreamingResponse
+from utils import update_db
 
 tags = [
     {
@@ -33,6 +34,7 @@ async def generate_image(image_url : str):
 
 @gun.get("/api/gun/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 async def gen_gun_img(image_url : str):
+    await update_db('gun')
     file = await generate_image(image_url)
     
     return StreamingResponse(file, media_type="image/png")

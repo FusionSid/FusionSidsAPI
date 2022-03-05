@@ -2,6 +2,7 @@ from fastapi import APIRouter
 import os
 from fastapi.responses import StreamingResponse
 from PIL import Image
+from utils import update_db
 from PIL import ImageFont
 from PIL import ImageDraw 
 from io import BytesIO
@@ -38,6 +39,7 @@ async def generate_image(text):
 
 @armor.get("/api/armor/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 async def gen_armor_img(text : str):
+    await update_db('armor')
 
     file = await generate_image(text)
 

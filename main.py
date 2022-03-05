@@ -22,6 +22,9 @@ from routers.other.roast import roast
 from routers.other.compliment import compliment
 from routers.other.random_meme import meme
 
+# Stats
+from routers.stats import stats
+
 # Description for api docs
 description = """
 ### Made by FusionSid
@@ -76,6 +79,8 @@ async def home():
     "endpoints" : url_list
   }
 
+# Stats
+app.include_router(stats)
 
 # Including all the endpoints:
 

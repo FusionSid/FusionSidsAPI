@@ -64,12 +64,7 @@ async def endpoint_list():
 
 @app.get("/")
 async def home():
-  url_list = await endpoint_list()
-
-  return {
-    "docs_url" : "https://fusionsidapi.herokuapp.com/docs",
-    "endpoints" : url_list
-  }
+  return RedirectResponse("/docs")
 
 
 @app.get("/api")

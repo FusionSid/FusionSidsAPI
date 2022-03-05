@@ -81,6 +81,8 @@ description = """
 
 [My Github](https://github.com/FusionSid)
 
+This api mostly generates memes but it can also do roasts, 8ball qrcodes and more
+
 #### Source Code:
 [https://github.com/FusionSid/FusionSidsAPI](https://github.com/FusionSid/FusionSidsAPI)
 
@@ -92,7 +94,7 @@ Discord: FusionSid#3645
 
 # Creates an instance of the FastAPI class
 app = FastAPI(
-    title = "Sids's API",
+    title = "FusionSidsAPI API",
     description=description,
     license_info={
         "name": "MIT",
@@ -103,6 +105,10 @@ app = FastAPI(
 
 # Including all the endpoints:
 
+# Other
+app.include_router(router=eightball)
+app.include_router(router=qrcode)
+app.include_router(router=roast)
 
 # Image
 
@@ -173,8 +179,3 @@ app.include_router(router=abandon)
 # app.include_router(router=ipad)
 # app.include_router(router=fakenews)
 # app.include_router(router=confusedcat)
-
-# Other
-app.include_router(router=eightball)
-app.include_router(router=qrcode)
-app.include_router(router=roast)

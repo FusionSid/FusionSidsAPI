@@ -1,33 +1,49 @@
 # FusionSidsAPI
 
-Ill make a readme later lol
-I renamed it from Image generation api to sids api since i plan on adding more than just images to this
+## This is a multi-purpose api.
 
-If you look in the [assets](https://github.com/FusionSid/FusionSidsAPI/tree/master/assets) folder you will see a list of images/memes im gonna be using for this.
+---
 
-Currently theres 67 images in that folder,
-I plan on having 69 endpoints so I need to find 2 more memes if you find something good:
+### Base URL (Redirects you to the docs: https://fusionsidapi.herokuapp.com/
 
+### API Docs: https://fusionsidapi.herokuapp.com/docs/
+
+### API URL: https://fusionsidapi.herokuapp.com/api
+
+
+---
+
+### Need Help:
 DM me on Discord: `FusionSid#3645`
 
-## [Api Docs:](https://fusionsidapi.herokuapp.com/docs/)
+### Contributing
+If you would like to contribute just make a pull request and if its good i'll accept it :)
 
 ---
-<br >
 
-### API URL: [https://fusionsidapi.herokuapp.com/](https://fusionsidapi.herokuapp.com/)
+### Using with python:
 
-<br >
+If you want to use this api with python but dont want to use something like requests, well dont worry:
 
-## Example:
+Introducing [FusionSidAPI.py](https://github.com/FusionSid/FusionSidAPI.py) (I really need a better name for this lol)
+This is an asynchronous api wrapper for the api
 
-<br >
+[PyPi Link](https://pypi.org/project/fusionsidsapi/)
 
-### URL:
+```
+pip install fusionsidsapi
+```
 
-[https://fusionsidapi.herokuapp.com/api/abandon/?text=I+like+light+themed+editors]()
 
 ---
+
+## Usage:
+
+**Example:**
+
+URL : https://fusionsidapi.herokuapp.com/api/abandon/?text=I+like+light+themed+editors
+
+Making a GET request to that url will return this:
 
 ### Response:
 

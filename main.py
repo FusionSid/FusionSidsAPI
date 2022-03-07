@@ -21,6 +21,8 @@ from routers.other.qrcode import qrcode
 from routers.other.roast import roast
 from routers.other.compliment import compliment
 from routers.other.random_meme import meme
+from routers.other.fact import fact
+from routers.other.truth_or_dare import truth_or_dare
 
 # Stats
 from routers.stats import stats
@@ -90,6 +92,8 @@ app.include_router(router=qrcode)
 app.include_router(router=eightball)
 app.include_router(router=meme)
 app.include_router(router=compliment)
+app.include_router(router=fact)
+app.include_router(router=truth_or_dare)
 
 # Image Endpoints
 app.include_router(router=armor)

@@ -15,7 +15,7 @@ compliment = APIRouter(tags=tags_metadata)
 @compliment.get("/api/compliment/")
 async def gen_compliment():
     await update_db('compliment')
-    with open('./utils/compliment.json') as f:
+    with open('./utils/datafiles/compliment.json') as f:
         compliment_list = json.load(f)
     return {
         "compliment" : random.choice(compliment_list)

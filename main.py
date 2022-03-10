@@ -24,6 +24,7 @@ from routers.other.random_meme import meme
 from routers.other.fact import fact
 from routers.other.wordle import wordle
 from routers.other.truth_or_dare import truth_or_dare
+from routers.other.reddit_search import searchreddit
 
 # Stats
 from routers.stats import stats
@@ -96,6 +97,7 @@ app.include_router(router=meme)
 app.include_router(router=compliment)
 app.include_router(router=fact)
 app.include_router(router=truth_or_dare)
+app.include_router(router=searchreddit)
 
 # Image Endpoints
 app.include_router(router=armor)

@@ -25,6 +25,8 @@ from routers.other.fact import fact
 from routers.other.wordle import wordle
 from routers.other.truth_or_dare import truth_or_dare
 from routers.other.reddit_search import searchreddit
+from routers.other.password import password
+from routers.other.encrypt import encrypt
 
 # Stats
 from routers.stats import stats
@@ -98,6 +100,8 @@ app.include_router(router=compliment)
 app.include_router(router=fact)
 app.include_router(router=truth_or_dare)
 app.include_router(router=searchreddit)
+app.include_router(router=password)
+app.include_router(router=encrypt)
 
 # Image Endpoints
 app.include_router(router=armor)

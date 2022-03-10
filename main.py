@@ -25,8 +25,16 @@ from routers.other.fact import fact
 from routers.other.wordle import wordle
 from routers.other.truth_or_dare import truth_or_dare
 from routers.other.reddit_search import searchreddit
-from routers.other.password import password
-from routers.other.encrypt import encrypt
+
+# TExt
+from routers.text.password import password
+from routers.text.encrypt import encrypt
+from routers.text.hex import hex
+from routers.text.binary import binary
+from routers.text.expand import expand
+from routers.text.drunkify import drunkify
+from routers.text.reverse import reverse
+
 
 # Stats
 from routers.stats import stats
@@ -100,8 +108,15 @@ app.include_router(router=compliment)
 app.include_router(router=fact)
 app.include_router(router=truth_or_dare)
 app.include_router(router=searchreddit)
+
+# Text
 app.include_router(router=password)
 app.include_router(router=encrypt)
+app.include_router(router=drunkify)
+app.include_router(router=expand)
+app.include_router(router=hex)
+app.include_router(router=reverse)
+app.include_router(router=binary)
 
 # Image Endpoints
 app.include_router(router=armor)

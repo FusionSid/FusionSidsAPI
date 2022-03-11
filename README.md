@@ -1,5 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/fusionsid/fusionsidsapi/badge)](https://www.codefactor.io/repository/github/fusionsid/fusionsidsapi)
-[![PyPi](https://img.shields.io/pypi/v/fusionsidsapi?style=for-the-badge)](https://pypi.org/project/fusionsidsapi/)
+[![PyPi](https://img.shields.io/pypi/v/fusionsidsapi)](https://pypi.org/project/fusionsidsapi/)
 
 # FusionSidsAPI
 

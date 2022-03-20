@@ -4,9 +4,10 @@ from utils import get_url_image
 import os
 import random
 from fastapi import APIRouter
-from utils import update_db
 from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
+
+from utils import update_stats
 
 load_dotenv()
 
@@ -55,8 +56,8 @@ async def do_search_reddit(keyword):
     return search
 
 @searchreddit.get("/api/searchreddit/")
+@update_stats(name="searchreddit")
 async def search_reddit(keyword):
-    await update_db('redditsearch')
     search = await do_search_reddit(keyword)
 
     return search

@@ -1,7 +1,8 @@
 from fastapi import APIRouter
-from utils import update_db
 import random
 import json
+
+from utils import update_stats
 
 # Title for docs
 tags_metadata = [
@@ -13,11 +14,11 @@ tags_metadata = [
 truth_or_dare = APIRouter(tags=tags_metadata)
 
 @truth_or_dare.get("/api/truthordare/")
+@update_stats(name="truthordare")
 async def gen_truth_or_dare():
-    await update_db('truthordare')
-    with open('./utils/datafiles/truths.json') as f:
+    with open('./files/truths.json') as f:
         truths_list = json.load(f)
-    with open("./utils/datafiles/dares.json") as f:
+    with open("./files/dares.json") as f:
         dares_list = json.load(f)
 
     return {

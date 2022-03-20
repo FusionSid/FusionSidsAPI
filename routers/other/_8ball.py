@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 import random
-from utils import update_db
+
+from utils import update_stats
 
 # Title for docs
 tags_metadata = [
@@ -12,8 +13,8 @@ tags_metadata = [
 eightball = APIRouter(tags=tags_metadata)
 
 @eightball.get("/api/8ball/")
+@update_stats(name="eightball")
 async def eight_ball(question : str = None):
-    await update_db('8ball')
     _8ballans = [
         "As I see it, yes",
         "It is certain",

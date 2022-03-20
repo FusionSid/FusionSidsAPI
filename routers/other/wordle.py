@@ -1,7 +1,8 @@
 from fastapi import APIRouter
-from utils import update_db
 from datetime import datetime
 import json
+
+from utils import update_stats
 
 async def get_word():
     date_format = "%d/%m/%y"
@@ -13,7 +14,7 @@ async def get_word():
 
     delta = b - a
 
-    with open('./utils/datafiles/words.json') as f:
+    with open('./files/words.json') as f:
         data = json.load(f)
 
     answer = data[delta.days]
@@ -30,8 +31,8 @@ tags_metadata = [
 wordle = APIRouter(tags=tags_metadata)
 
 @wordle.get("/api/wordle/")
+@update_stats(name="wordle")
 async def get_wordle():
-    await update_db("wordle")
     word = await get_word()
     return {
         "wordle" : word

@@ -1,9 +1,9 @@
 from fastapi import APIRouter
+from utils import update_stats
 import os
 from fastapi.responses import StreamingResponse
 from PIL import Image
 from PIL import ImageFont
-from utils import update_db
 from PIL import ImageDraw 
 from io import BytesIO
 
@@ -43,8 +43,8 @@ async def generate_image(text):
     return d
 
 @abandon.get("/api/abandon/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
+@update_stats(name="abandon")
 async def gen_abandon_img(text : str):
-    await update_db('abandon')
     
     file = await generate_image(text)
     

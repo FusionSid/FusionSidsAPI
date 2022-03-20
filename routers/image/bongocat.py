@@ -4,7 +4,8 @@ import os
 from PIL import Image
 from utils import get_url_image
 from fastapi.responses import StreamingResponse
-from utils import update_db
+
+from utils import update_stats
 
 tags = [
     {
@@ -33,8 +34,8 @@ async def generate_image(image_url : str):
     return d
 
 @bongocat.get("/api/bongocat/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
+@update_stats(name="bongocat")
 async def gen_bongocat_img(image_url : str):
-    await update_db('bongocat')
     
     file = await generate_image(image_url)
     

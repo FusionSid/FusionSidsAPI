@@ -1,6 +1,7 @@
-from fastapi import APIRouter
-from utils import update_db
 import hashlib
+from fastapi import APIRouter
+
+from utils import update_stats
 
 tags_metadata = [
     {
@@ -18,8 +19,8 @@ async def text_encrypt(text : str) -> str:
 encrypt = APIRouter(tags=tags_metadata)
 
 @encrypt.get("/api/encrypt")
+@update_stats(name="encrypt")
 async def encrypt_text(text : str):
-    update_db("enrypt")
 
     encrypted = await text_encrypt(text)
 

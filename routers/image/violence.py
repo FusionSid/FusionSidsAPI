@@ -5,8 +5,9 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw 
 from io import BytesIO
-from utils import update_db
 import textwrap
+
+from utils import update_stats
 
 tags_metadata = [
     {
@@ -38,8 +39,8 @@ async def generate_image(text):
     return d
 
 @violence.get("/api/violence/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
+@update_stats(name="violence")
 async def gen_violence_img(text : str):
-    await update_db('violence')
     file = await generate_image(text)
 
     return StreamingResponse(file, media_type="image/png")

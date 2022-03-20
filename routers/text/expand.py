@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from utils import update_db
+
+from utils import update_stats
 
 tags_metadata = [
     {
@@ -10,8 +11,8 @@ tags_metadata = [
 expand = APIRouter(tags=tags_metadata)
 
 @expand.get("/api/expand")
+@update_stats(name="expand")
 async def generate_expand(text : str, space : int = 5):
-    update_db("expand")
 
     spacing = ""
     for i in range(space):

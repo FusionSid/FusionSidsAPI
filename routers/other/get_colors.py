@@ -1,8 +1,9 @@
 from colorthief import ColorThief
 from PIL import Image
 from fastapi import APIRouter, UploadFile
-from utils import update_db
 from io import BytesIO
+
+from utils import update_stats
 
 # Title for docs
 tags_metadata = [
@@ -33,11 +34,11 @@ async def get_image_colors(image, _hex):
 
 
 @get_colors.post("/api/get_colors/")
+@update_stats(name="getcolors")
 async def find_colors(image : UploadFile, show_hex : bool = True):
     img = await image.read()
     img = BytesIO(img)
 
-    await update_db('get_colors')
 
     colors = await get_image_colors(img, show_hex)
 

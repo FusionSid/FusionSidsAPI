@@ -1,9 +1,11 @@
 from fastapi import APIRouter
 from io import BytesIO
 from fastapi.responses import StreamingResponse
-from utils import get_url_image, update_db
+from utils import get_url_image
 from PIL import Image
 import os
+
+from utils import update_stats
 
 tags_metadata = [
     {
@@ -33,8 +35,8 @@ async def generate_image(image_url : str):
 
 
 @wanted.get("/api/wanted/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
+@update_stats(name="wanted")
 async def gen_wanted_img(image_url : str):
-    await update_db('wanted')
     file = await generate_image(image_url)
 
     return StreamingResponse(file, media_type="image/png")

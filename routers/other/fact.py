@@ -1,7 +1,8 @@
 from fastapi import APIRouter
-from utils import update_db
 import random
 import json
+
+from utils import update_stats
 
 # Title for docs
 tags_metadata = [
@@ -13,9 +14,9 @@ tags_metadata = [
 fact = APIRouter(tags=tags_metadata)
 
 @fact.get("/api/fact/")
+@update_stats(name="fact")
 async def gen_fact():
-    await update_db('fact')
-    with open('./utils/datafiles/facts.json') as f:
+    with open('./files/facts.json') as f:
         fact_list = json.load(f)
     return {
         "fact" : random.choice(fact_list)

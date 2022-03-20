@@ -1,6 +1,8 @@
-from fastapi import APIRouter
-from utils import update_db
 import random
+
+from fastapi import APIRouter
+
+from utils import update_stats
 
 tags_metadata = [
     {
@@ -11,8 +13,8 @@ tags_metadata = [
 reverse = APIRouter(tags=tags_metadata)
 
 @reverse.get("/api/reverse")
+@update_stats(name="reverse")
 async def generate_reverse(text : str):
-    update_db("reverse")
 
     reversed_text = text[::-1]
 

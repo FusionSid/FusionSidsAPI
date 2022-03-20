@@ -1,6 +1,7 @@
-from fastapi import APIRouter
-from utils import update_db
 import random
+from fastapi import APIRouter
+
+from utils import update_stats
 
 tags_metadata = [
     {
@@ -11,8 +12,8 @@ tags_metadata = [
 drunkify = APIRouter(tags=tags_metadata)
 
 @drunkify.get("/api/drunkify")
+@update_stats(name="drunkify")
 async def generate_drunk(text : str):
-    update_db("drunkify")
 
     lst = [str.lower, str.upper]
     drunkified = ''.join(random.choice(lst)(c) for c in text)

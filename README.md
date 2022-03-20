@@ -1,15 +1,17 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/fusionsid/fusionsidsapi/badge)](https://www.codefactor.io/repository/github/fusionsid/fusionsidsapi)
+[![PyPi](https://img.shields.io/pypi/v/fusionsidsapi)](https://pypi.org/project/fusionsidsapi/)
+
 # FusionSidsAPI
 
 ## This is a multi-purpose api.
 
 ---
 
-### Base URL (Redirects you to the docs: https://fusionsidapi.herokuapp.com/
+### [Base URL (Redirects you to the docs)](https://fusionsidapi.herokuapp.com/)
 
-### API Docs: https://fusionsidapi.herokuapp.com/docs/
+### [API Docs](https://fusionsidapi.herokuapp.com/docs/)
 
-### API URL: https://fusionsidapi.herokuapp.com/api
-
+### [API URL](https://fusionsidapi.herokuapp.com/api)
 
 ---
 
@@ -34,7 +36,6 @@ This is an asynchronous api wrapper for the api
 pip install fusionsidsapi
 ```
 
-
 ---
 
 ## Usage:
@@ -49,6 +50,8 @@ Making a GET request to that url will return this:
 
 ---
 
-![](https://fusionsidapi.herokuapp.com/api/abandon/?text=I+prefer+light+themed+editors)
+![Fuck light theme](https://fusionsidapi.herokuapp.com/api/abandon/?text=I+prefer+light+themed+editors)
 
 ---
+
+While no code was used, I took a lot of inspiration from [dhravyaPy](https://github.com/27Saumya/dhravyapy)

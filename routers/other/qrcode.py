@@ -1,7 +1,8 @@
-from fastapi import APIRouter
 from io import BytesIO
-from fastapi.responses import StreamingResponse
+
+from fastapi import APIRouter
 import qrcode as qrc
+from fastapi.responses import StreamingResponse
 
 from utils import update_stats
 

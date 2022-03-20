@@ -1,11 +1,11 @@
-from fastapi import APIRouter
-from io import BytesIO
-from fastapi.responses import StreamingResponse
-from utils import get_url_image
-from PIL import Image
 import os
+from io import BytesIO
 
-from utils import update_stats
+from PIL import Image
+from fastapi import APIRouter
+from fastapi.responses import StreamingResponse
+
+from utils import update_stats, get_url_image
 
 tags_metadata = [
     {

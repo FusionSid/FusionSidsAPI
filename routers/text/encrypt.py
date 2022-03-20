@@ -1,4 +1,5 @@
 import hashlib
+
 from fastapi import APIRouter
 
 from utils import update_stats

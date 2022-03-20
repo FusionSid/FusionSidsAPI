@@ -1,6 +1,7 @@
-from fastapi import APIRouter
-import random
 import json
+import random
+
+from fastapi import APIRouter
 
 from utils import update_stats
 

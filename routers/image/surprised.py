@@ -1,11 +1,12 @@
-from fastapi import APIRouter
 import os
-from fastapi.responses import StreamingResponse
+import textwrap
+from io import BytesIO
+
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw 
-from io import BytesIO
-import textwrap
+from fastapi import APIRouter
+from fastapi.responses import StreamingResponse
 
 from utils import update_stats
 

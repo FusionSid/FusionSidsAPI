@@ -1,7 +1,7 @@
-from colorthief import ColorThief
-from PIL import Image
-from fastapi import APIRouter, UploadFile
 from io import BytesIO
+
+from colorthief import ColorThief
+from fastapi import APIRouter, UploadFile
 
 from utils import update_stats
 

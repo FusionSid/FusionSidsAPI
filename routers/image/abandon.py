@@ -1,12 +1,13 @@
-from fastapi import APIRouter
-from utils import update_stats
 import os
-from fastapi.responses import StreamingResponse
+from io import BytesIO
+
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw 
-from io import BytesIO
+from fastapi import APIRouter
+from fastapi.responses import StreamingResponse
 
+from utils import update_stats
 
 # Title for docs
 tags_metadata = [

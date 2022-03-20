@@ -1,3 +1,8 @@
+""" (module)
+
+This module contains several functions to make HTTP requests
+"""
+
 import aiohttp
 
 async def get_url_json(url, data=None):

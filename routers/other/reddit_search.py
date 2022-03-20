@@ -1,10 +1,7 @@
-import asyncpraw
-from io import BytesIO
-from utils import get_url_image
 import os
-import random
+
+import asyncpraw
 from fastapi import APIRouter
-from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
 
 from utils import update_stats

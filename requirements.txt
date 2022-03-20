@@ -7,6 +7,6 @@ uvicorn==0.17.5
 apistats==0.4.1
 asyncpraw==7.5.0
 colorthief==0.2.1
-fast_api_stats==0.0.2
+fast-api-stats==0.0.2
 python-dotenv==0.19.2
 python-multipart==0.0.5

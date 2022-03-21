@@ -55,6 +55,7 @@ async def do_search_reddit(keyword):
 @searchreddit.get("/api/searchreddit/")
 @update_stats(name="searchreddit")
 async def search_reddit(keyword):
+    """Searches reddit for a keyword"""
     search = await do_search_reddit(keyword)
 
     return search

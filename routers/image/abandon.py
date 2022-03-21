@@ -46,6 +46,7 @@ async def generate_image(text):
 @abandon.get("/api/abandon/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="abandon")
 async def gen_abandon_img(text : str):
+    """Generates the abandon meme"""
     
     file = await generate_image(text)
     

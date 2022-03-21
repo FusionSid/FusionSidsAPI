@@ -13,6 +13,7 @@ reverse = APIRouter(tags=tags_metadata)
 @reverse.get("/api/reverse")
 @update_stats(name="reverse")
 async def generate_reverse(text : str):
+    """Reverses Text"""
 
     reversed_text = text[::-1]
 

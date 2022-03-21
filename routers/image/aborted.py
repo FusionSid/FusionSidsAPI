@@ -37,6 +37,7 @@ async def generate_image(image_url : str):
 @aborted.get("/api/aborted/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="aborted")
 async def gen_aborted_img(image_url : str):
+    """Generates the aborted meme"""
     
     file = await generate_image(image_url)
 

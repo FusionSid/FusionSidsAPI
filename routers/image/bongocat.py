@@ -36,6 +36,7 @@ async def generate_image(image_url : str):
 @bongocat.get("/api/bongocat/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="bongocat")
 async def gen_bongocat_img(image_url : str):
+    """Generates the bongocat meme"""
     
     file = await generate_image(image_url)
     

@@ -36,6 +36,7 @@ async def get_image_colors(image, _hex):
 @get_colors.post("/api/get_colors/")
 @update_stats(name="getcolors")
 async def find_colors(image : UploadFile, show_hex : bool = True):
+    """Gets the colors in an image"""
     img = await image.read()
     img = BytesIO(img)
 

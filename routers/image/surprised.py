@@ -54,6 +54,7 @@ async def generate_image(text):
 @surprised.get("/api/surprised/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="surprised")
 async def gen_surprised_img(text : str):
+    """Generates the surprised meme"""
     file = await generate_image(text)
     
     return StreamingResponse(file, media_type="image/png")

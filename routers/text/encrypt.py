@@ -22,6 +22,7 @@ encrypt = APIRouter(tags=tags_metadata)
 @encrypt.get("/api/encrypt")
 @update_stats(name="encrypt")
 async def encrypt_text(text : str):
+    """Hashes text"""
 
     encrypted = await text_encrypt(text)
 

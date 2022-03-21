@@ -38,6 +38,7 @@ async def generate_image(image_url : str):
 @affect.get("/api/affect/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="affect")
 async def gen_affect_img(image_url : str):
+    """Generates the affect meme"""
     
     file = await generate_image(image_url)
 

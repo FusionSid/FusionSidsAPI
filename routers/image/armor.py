@@ -42,6 +42,7 @@ async def generate_image(text):
 @armor.get("/api/armor/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="armor")
 async def gen_armor_img(text : str):
+    """Generates the armor meme"""
 
     file = await generate_image(text)
 

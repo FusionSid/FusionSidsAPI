@@ -59,6 +59,7 @@ async def generate_meme(reddit_info):
 @meme.get("/api/meme/")
 @update_stats(name="meme")
 async def gen_meme(reddit_json_info : bool = False):
+    """Gets a random meme"""
     reddit_meme = await generate_meme(reddit_json_info)
 
     if reddit_json_info:

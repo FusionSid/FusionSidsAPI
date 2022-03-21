@@ -37,6 +37,7 @@ async def generate_image(image_url : str):
 @wanted.get("/api/wanted/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="wanted")
 async def gen_wanted_img(image_url : str):
+    """Creates the wanted image"""
     file = await generate_image(image_url)
 
     return StreamingResponse(file, media_type="image/png")

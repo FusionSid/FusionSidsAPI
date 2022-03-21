@@ -36,6 +36,7 @@ async def generate_image(image_url : str):
 @gun.get("/api/gun/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="gun")
 async def gen_gun_img(image_url : str):
+    """Generates the gun meme"""
     file = await generate_image(image_url)
     
     return StreamingResponse(file, media_type="image/png")

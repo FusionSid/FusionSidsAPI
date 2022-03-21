@@ -36,6 +36,7 @@ async def generate_qrcode(url):
 @qrcode.get("/api/qrcode/")
 @update_stats(name="qrcode")
 async def gen_qrcode(link : str):
+    """Creates a qr code"""
     file = await generate_qrcode(link)
 
     return StreamingResponse(file, media_type="image/png")

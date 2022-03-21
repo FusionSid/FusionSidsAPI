@@ -34,6 +34,7 @@ wordle = APIRouter(tags=tags_metadata)
 @wordle.get("/api/wordle/")
 @update_stats(name="wordle")
 async def get_wordle():
+    """Gets the wordle answer, This might be yesterdays answer depending on you timezone"""
     word = await get_word()
     return {
         "wordle" : word

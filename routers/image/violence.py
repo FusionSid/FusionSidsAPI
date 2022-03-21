@@ -42,6 +42,7 @@ async def generate_image(text):
 @violence.get("/api/violence/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="violence")
 async def gen_violence_img(text : str):
+    """Creates the violence meme"""
     file = await generate_image(text)
 
     return StreamingResponse(file, media_type="image/png")

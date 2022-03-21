@@ -14,6 +14,7 @@ hex = APIRouter(tags=tags_metadata)
 @hex.get("/api/texttohex")
 @update_stats(name="texttohex")
 async def texttohex(text : str):
+    """Converts text to hex"""
     
     result = " ".join("{:02x}".format(ord(c)) for c in text)
 
@@ -25,6 +26,7 @@ async def texttohex(text : str):
 @hex.get("/api/hextotext")
 @update_stats(name="hextotext")
 async def hextotext(hex_text : str):
+    """Converts hex text back to text"""
 
     result = bytearray.fromhex(hex_text).decode()
 

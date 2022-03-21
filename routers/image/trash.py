@@ -37,6 +37,7 @@ async def generate_image(image_url : str):
 @trash.get("/api/trash/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="trash")
 async def gen_trash_img(image_url : str):
+    """Generates the trash meme"""
     
     file = await generate_image(image_url)
 

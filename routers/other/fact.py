@@ -17,6 +17,7 @@ fact = APIRouter(tags=tags_metadata)
 @fact.get("/api/fact/")
 @update_stats(name="fact")
 async def gen_fact():
+    """Gets a random fact"""
     with open('./files/facts.json') as f:
         fact_list = json.load(f)
     return {

@@ -16,6 +16,7 @@ eightball = APIRouter(tags=tags_metadata)
 @eightball.get("/api/8ball/")
 @update_stats(name="eightball")
 async def eight_ball(question : str = None):
+    """Asks the magical 8ball a question"""
     _8ballans = [
         "As I see it, yes",
         "It is certain",

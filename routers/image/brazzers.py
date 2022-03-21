@@ -39,6 +39,7 @@ async def generate_image(image_url : str):
 @brazzers.get("/api/brazzers/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
 @update_stats(name="brazzers")
 async def gen_brazzers_img(image_url):
+    """Generates the brazzers meme"""
 
     file = await generate_image(image_url)
 

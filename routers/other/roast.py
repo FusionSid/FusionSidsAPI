@@ -17,6 +17,7 @@ roast = APIRouter(tags=tags_metadata)
 @roast.get("/api/roast/")
 @update_stats(name="roast")
 async def gen_roast():
+    """Generates a roast"""
     with open('./files/roastlist.json') as f:
         roast_list = json.load(f)
     return {

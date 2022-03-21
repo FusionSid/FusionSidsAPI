@@ -15,6 +15,7 @@ drunkify = APIRouter(tags=tags_metadata)
 @drunkify.get("/api/drunkify")
 @update_stats(name="drunkify")
 async def generate_drunk(text : str):
+    """Drunkifies text"""
 
     lst = [str.lower, str.upper]
     drunkified = ''.join(random.choice(lst)(c) for c in text)

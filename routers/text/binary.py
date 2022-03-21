@@ -13,6 +13,7 @@ binary = APIRouter(tags=tags_metadata)
 @binary.get("/api/texttobinary")
 @update_stats(name="texttobinary")
 async def texttobinary(text : str):
+    """Converts text to binary"""
 
     result = ' '.join(format(ord(x), 'b') for x in text)
 
@@ -24,6 +25,7 @@ async def texttobinary(text : str):
 @binary.get("/api/binarytotext")
 @update_stats(name="binarytotext")
 async def binarytotext(binary_text : str):
+    """Converts binary to text"""
 
     result = ''.join([chr(int(s, 2)) for s in binary_text.split()])
 

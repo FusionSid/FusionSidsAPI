@@ -85,16 +85,17 @@ app.include_router(router=fact)
 app.include_router(router=truth_or_dare)
 app.include_router(router=searchreddit)
 app.include_router(router=get_colors)
-
+app.include_router(router=mcskin)
 
 # Text
+app.include_router(router=fontconvert)
 app.include_router(router=password)
-app.include_router(router=encrypt)
 app.include_router(router=drunkify)
 app.include_router(router=expand)
+app.include_router(router=binary)
 app.include_router(router=hex)
 app.include_router(router=reverse)
-app.include_router(router=binary)
+app.include_router(router=encrypt)
 
 
 # Image Endpoints

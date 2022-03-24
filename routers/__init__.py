@@ -33,7 +33,12 @@ from routers.text.encrypt import encrypt
 from routers.text.reverse import reverse
 from routers.text.password import password
 from routers.text.drunkify import drunkify
+from routers.text.custom_font import fontconvert
 
 
 # Stats
 from routers.stats import stats
+
+
+# Minecraft
+from routers.other.mcskin import mcskin

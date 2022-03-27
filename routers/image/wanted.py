@@ -15,13 +15,13 @@ tags_metadata = [
 
 wanted = APIRouter(tags=tags_metadata)
 
-async def generate_image(image_url : str):
+
+async def generate_image(image_url: str):
     profile_image = await get_url_image(image_url)
     profile = BytesIO(profile_image)
     profile.seek(0)
     size = (500, 500)
     avatar = Image.open(profile).resize(size)
-
 
     cwd = os.getcwd()
     img = Image.open(f"{cwd}/assets/wanted.bmp")
@@ -34,11 +34,14 @@ async def generate_image(image_url : str):
     return d
 
 
-@wanted.get("/api/wanted/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
+@wanted.get(
+    "/api/wanted/",
+    responses={200: {"content": {"image/png": {}}}},
+    response_class=StreamingResponse,
+)
 @update_stats(name="wanted")
-async def gen_wanted_img(image_url : str):
+async def gen_wanted_img(image_url: str):
     """Creates the wanted image"""
     file = await generate_image(image_url)
 
     return StreamingResponse(file, media_type="image/png")
-

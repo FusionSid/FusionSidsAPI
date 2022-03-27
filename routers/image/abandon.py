@@ -3,7 +3,7 @@ from io import BytesIO
 
 from PIL import Image
 from PIL import ImageFont
-from PIL import ImageDraw 
+from PIL import ImageDraw
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 
@@ -35,7 +35,7 @@ async def generate_image(text):
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(f"{cwd}/fonts/roboto-medium.ttf", 20)
 
-    draw.text((30, 460),text, fill="black", font=font, align='center')
+    draw.text((30, 460), text, fill="black", font=font, align="center")
 
     d = BytesIO()
     d.seek(0)
@@ -43,11 +43,16 @@ async def generate_image(text):
     d.seek(0)
     return d
 
-@abandon.get("/api/abandon/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
+
+@abandon.get(
+    "/api/abandon/",
+    responses={200: {"content": {"image/png": {}}}},
+    response_class=StreamingResponse,
+)
 @update_stats(name="abandon")
-async def gen_abandon_img(text : str):
+async def gen_abandon_img(text: str):
     """Generates the abandon meme"""
-    
+
     file = await generate_image(text)
-    
+
     return StreamingResponse(file, media_type="image/png")

@@ -4,7 +4,7 @@ from io import BytesIO
 
 from PIL import Image
 from PIL import ImageFont
-from PIL import ImageDraw 
+from PIL import ImageDraw
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 
@@ -36,12 +36,14 @@ async def generate_image(text):
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype(f"{cwd}/fonts/roboto-medium.ttf", 40)
 
-    w, h = 675, 50 
+    w, h = 675, 50
     lines = textwrap.wrap(text, width=18)
     y_text = h
     for line in lines:
         width, height = font.getsize(line)
-        draw.text(((w - width) / 2, y_text), line, font=font, fill="white", align="center")
+        draw.text(
+            ((w - width) / 2, y_text), line, font=font, fill="white", align="center"
+        )
         y_text += height
 
     d = BytesIO()
@@ -51,10 +53,14 @@ async def generate_image(text):
     return d
 
 
-@surprised.get("/api/surprised/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
+@surprised.get(
+    "/api/surprised/",
+    responses={200: {"content": {"image/png": {}}}},
+    response_class=StreamingResponse,
+)
 @update_stats(name="surprised")
-async def gen_surprised_img(text : str):
+async def gen_surprised_img(text: str):
     """Generates the surprised meme"""
     file = await generate_image(text)
-    
+
     return StreamingResponse(file, media_type="image/png")

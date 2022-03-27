@@ -13,9 +13,10 @@ tags_metadata = [
 
 eightball = APIRouter(tags=tags_metadata)
 
+
 @eightball.get("/api/8ball/")
 @update_stats(name="eightball")
-async def eight_ball(question : str = None):
+async def eight_ball(question: str = None):
     """Asks the magical 8ball a question"""
     _8ballans = [
         "As I see it, yes",
@@ -37,10 +38,7 @@ async def eight_ball(question : str = None):
         "My reply is no",
         "My sources say no",
         "Outlook not so good",
-        "Very doubtful"
+        "Very doubtful",
     ]
 
-    return {
-        "question" : question,
-        "answer" : random.choice(_8ballans)
-    }
+    return {"question": question, "answer": random.choice(_8ballans)}

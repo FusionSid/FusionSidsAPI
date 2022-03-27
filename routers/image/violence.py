@@ -4,7 +4,7 @@ from io import BytesIO
 
 from PIL import Image
 from PIL import ImageFont
-from PIL import ImageDraw 
+from PIL import ImageDraw
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 
@@ -18,6 +18,7 @@ tags_metadata = [
 
 violence = APIRouter(tags=tags_metadata)
 
+
 async def generate_image(text):
     cwd = os.getcwd()
 
@@ -30,7 +31,9 @@ async def generate_image(text):
     y_text = h
     for line in lines:
         width, height = font.getsize(line)
-        draw.text(((w - width) / 2, y_text), line, font=font, fill="black", align="center")
+        draw.text(
+            ((w - width) / 2, y_text), line, font=font, fill="black", align="center"
+        )
         y_text += height
 
     d = BytesIO()
@@ -39,11 +42,15 @@ async def generate_image(text):
     d.seek(0)
     return d
 
-@violence.get("/api/violence/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
+
+@violence.get(
+    "/api/violence/",
+    responses={200: {"content": {"image/png": {}}}},
+    response_class=StreamingResponse,
+)
 @update_stats(name="violence")
-async def gen_violence_img(text : str):
+async def gen_violence_img(text: str):
     """Creates the violence meme"""
     file = await generate_image(text)
 
     return StreamingResponse(file, media_type="image/png")
-

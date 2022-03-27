@@ -24,48 +24,48 @@ Discord: FusionSid#3645
 
 # Creates an instance of the FastAPI class
 app = FastAPI(
-    title = "FusionSidsAPI",
+    title="FusionSidsAPI",
     description=description,
     license_info={
         "name": "MIT",
         "url": "https://opensource.org/licenses/MIT",
     },
-
 )
 
+
 async def endpoint_list():
-  url_list = [route.path for route in app.routes]
+    url_list = [route.path for route in app.routes]
 
-  url_list.remove("/openapi.json")
-  url_list.remove("/docs/oauth2-redirect")
-  url_list.remove("/redoc")
-  url_list.remove("/")
-  url_list.remove("/api")
+    url_list.remove("/openapi.json")
+    url_list.remove("/docs/oauth2-redirect")
+    url_list.remove("/redoc")
+    url_list.remove("/")
+    url_list.remove("/api")
 
-  return url_list
+    return url_list
 
 
 @app.get("/")
 @update_stats()
 async def home():
-  """
-  The home page, Redirects to docs
-  """
-  return RedirectResponse("/docs")
+    """
+    The home page, Redirects to docs
+    """
+    return RedirectResponse("/docs")
 
 
 @app.get("/api")
 @update_stats()
 async def api():
-  """
-  The api endpoint, Gives a list of endpoints
-  """
-  url_list = await endpoint_list()
+    """
+    The api endpoint, Gives a list of endpoints
+    """
+    url_list = await endpoint_list()
 
-  return {
-    "docs_url" : "https://fusionsidapi.herokuapp.com/docs",
-    "endpoints" : url_list
-  }
+    return {
+        "docs_url": "https://fusionsidapi.herokuapp.com/docs",
+        "endpoints": url_list,
+    }
 
 
 # Including all the endpoints:

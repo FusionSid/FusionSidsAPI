@@ -13,9 +13,10 @@ tags_metadata = [
 
 password = APIRouter(tags=tags_metadata)
 
+
 @password.get("/api/password")
 @update_stats(name="password")
-async def generate_password(length : int = 8):
+async def generate_password(length: int = 8):
     """Generates a password"""
     letters = list(string.ascii_letters + string.digits + string.punctuation)
 
@@ -23,6 +24,4 @@ async def generate_password(length : int = 8):
     for i in range(length):
         pswd += random.choice(letters)
 
-    return {
-        "password" : pswd
-    }
+    return {"password": pswd}

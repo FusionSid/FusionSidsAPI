@@ -15,6 +15,7 @@ tags_metadata = [
 
 qrcode = APIRouter(tags=tags_metadata)
 
+
 async def generate_qrcode(url):
     qr = qrc.QRCode(
         version=1,
@@ -24,8 +25,7 @@ async def generate_qrcode(url):
     )
     qr.add_data(str(url))
     qr.make(fit=True)
-    img = qr.make_image(fill_color="black",
-                        back_color="white").convert('RGB')
+    img = qr.make_image(fill_color="black", back_color="white").convert("RGB")
     d = BytesIO()
     d.seek(0)
     img.save(d, "PNG")
@@ -35,7 +35,7 @@ async def generate_qrcode(url):
 
 @qrcode.get("/api/qrcode/")
 @update_stats(name="qrcode")
-async def gen_qrcode(link : str):
+async def gen_qrcode(link: str):
     """Creates a qr code"""
     file = await generate_qrcode(link)
 

@@ -15,13 +15,13 @@ tags_metadata = [
 
 aborted = APIRouter(tags=tags_metadata)
 
-async def generate_image(image_url : str):
+
+async def generate_image(image_url: str):
     profile_image = await get_url_image(image_url)
     profile = BytesIO(profile_image)
     profile.seek(0)
     size = (80, 80)
     avatar = Image.open(profile).resize(size)
-
 
     cwd = os.getcwd()
     img = Image.open(f"{cwd}/assets/aborted.bmp")
@@ -34,12 +34,15 @@ async def generate_image(image_url : str):
     return d
 
 
-@aborted.get("/api/aborted/", responses = {200: {"content": {"image/png": {}}}}, response_class=StreamingResponse)
+@aborted.get(
+    "/api/aborted/",
+    responses={200: {"content": {"image/png": {}}}},
+    response_class=StreamingResponse,
+)
 @update_stats(name="aborted")
-async def gen_aborted_img(image_url : str):
+async def gen_aborted_img(image_url: str):
     """Generates the aborted meme"""
-    
+
     file = await generate_image(image_url)
 
     return StreamingResponse(file, media_type="image/png")
-

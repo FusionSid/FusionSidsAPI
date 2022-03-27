@@ -8,18 +8,14 @@ from fastapi.responses import StreamingResponse
 from utils import update_stats, get_url_json, get_url_image
 
 
-async def get_uuid(user : str):
-    url = f'https://api.mojang.com/users/profiles/minecraft/{user}?'
+async def get_uuid(user: str):
+    url = f"https://api.mojang.com/users/profiles/minecraft/{user}?"
     response = await get_url_json(url)
-    uuid = response['id']
+    uuid = response["id"]
     return uuid
 
 
-tags = [
-    {
-        "name" : "Gets MC Skin"
-    }
-]
+tags = [{"name": "Gets MC Skin"}]
 
 
 mcskin = APIRouter(tags=tags)
@@ -27,7 +23,7 @@ mcskin = APIRouter(tags=tags)
 
 @mcskin.get("/api/mcskin")
 @update_stats(name="mcskin")
-async def get_minecraft_skin(username : str):
+async def get_minecraft_skin(username: str):
     """Gets a users minecraft skin"""
 
     uuid = await get_uuid(username)

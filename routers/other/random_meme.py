@@ -18,13 +18,15 @@ tags_metadata = [
     }
 ]
 
+
 async def reddit_client():
     client = asyncpraw.Reddit(
-        client_id=os.environ['CLIENT_ID'],
-        client_secret=os.environ['CLIENT_SECRET'],
-        user_agent="memes-fastapi"
+        client_id=os.environ["CLIENT_ID"],
+        client_secret=os.environ["CLIENT_SECRET"],
+        user_agent="memes-fastapi",
     )
     return client
+
 
 meme = APIRouter(tags=tags_metadata)
 
@@ -41,14 +43,13 @@ async def generate_meme(reddit_info):
     url = ran_sub.url
     ups = ran_sub.ups
     author = ran_sub.author
-    
 
     if reddit_info:
         return {
-            "url" : url,
-            "title" : name,
-            "author" : str(author.name),
-            "upvotes" : ups,
+            "url": url,
+            "title": name,
+            "author": str(author.name),
+            "upvotes": ups,
         }
     else:
         file = await get_url_image(url)
@@ -56,9 +57,10 @@ async def generate_meme(reddit_info):
         file.seek(0)
         return file
 
+
 @meme.get("/api/meme/")
 @update_stats(name="meme")
-async def gen_meme(reddit_json_info : bool = False):
+async def gen_meme(reddit_json_info: bool = False):
     """Gets a random meme"""
     reddit_meme = await generate_meme(reddit_json_info)
 

@@ -4,6 +4,7 @@ qrcode==7.3.1
 aiohttp==3.8.1
 fastapi==0.75.0
 uvicorn==0.17.5
+asyncpg==0.25.0
 apistats==0.4.1
 asyncpraw==7.5.0
 colorthief==0.2.1

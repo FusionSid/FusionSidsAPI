@@ -1,9 +1,16 @@
+import os
 import json
 import datetime
 
 import psutil
+import asyncpg
 import platform
 from fastapi import APIRouter
+from dotenv import load_dotenv
+
+load_dotenv()
+
+db_url = os.environ["DATABASE_URL"]
 
 UPTIME = datetime.datetime.now()
 
@@ -34,13 +41,33 @@ async def get_uptime():
     return time
 
 
+async def get_stats_from_db():
+    connection = await asyncpg.connect(db_url)
+
+    data = await connection.fetch("SELECT * FROM Stats")
+
+    return_dict = {
+
+    }
+
+    for record in data:
+        return_dict[record[0]] = record[1]
+
+    await connection.close()
+
+    return return_dict
+
+
 @stats.get("/stats/")
 async def get_stats():
     
     time = await get_uptime()
 
-    with open("files/stats.json") as f:
-        stat_data = json.load(f)    
+    # with open("files/stats.json") as f:
+    #     stat_data = json.load(f)   
+
+    stat_data = await get_stats_from_db() 
+    
 
     system_data = {
         "memory" : f'{psutil.virtual_memory().percent}%',

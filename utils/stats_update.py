@@ -14,7 +14,13 @@ load_dotenv()
 
 db_url = os.environ["DATABASE_URL"]
 
-async def update_db(name):
+async def update_db(name:str):
+    """
+    Updates the stats db
+
+    Parameters
+        :param name (str): The name of the endpoint that will be updated
+    """
     connection = await asyncpg.connect(db_url)
     data = await connection.fetch("""SELECT * FROM Stats WHERE name='{}'""".format(name))
     if len(data) == 0:
@@ -27,6 +33,9 @@ async def update_db(name):
 
 
 def update_stats(*args, **kw_args):
+    """
+    Decorator to update the stats for an endpoint
+    """
     def wrapper(func):
         @functools.wraps(func)
         async def wrapped(*args, **kwargs):

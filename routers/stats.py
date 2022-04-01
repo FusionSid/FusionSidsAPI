@@ -1,5 +1,4 @@
 import os
-import json
 import datetime
 
 import psutil
@@ -62,9 +61,6 @@ async def get_stats_from_db():
 async def get_stats():
     
     time = await get_uptime()
-
-    # with open("files/stats.json") as f:
-    #     stat_data = json.load(f)   
 
     stat_data = await get_stats_from_db() 
     

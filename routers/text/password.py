@@ -21,6 +21,7 @@ async def generate_password(length: int = 8):
     letters = list(string.ascii_letters + string.digits + string.punctuation)
 
     pswd = ""
+    
     for i in range(length):
         pswd += random.choice(letters)
 

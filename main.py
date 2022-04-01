@@ -4,6 +4,8 @@ from fastapi.responses import RedirectResponse
 from routers import *
 from utils import update_stats
 
+__version__ = "1.0.0"
+
 # Description for api docs
 description = """
 ### Made by FusionSid

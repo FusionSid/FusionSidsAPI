@@ -17,6 +17,7 @@ from routers.other.fact import fact
 from routers.other.roast import roast
 from routers.other.wordle import wordle
 from routers.other.qrcode import qrcode
+from routers.other.mcskin import mcskin
 from routers.other._8ball import eightball
 from routers.other.random_meme import meme
 from routers.other.compliment import compliment
@@ -40,5 +41,6 @@ from routers.text.custom_font import fontconvert
 from routers.stats import stats
 
 
-# Minecraft
-from routers.other.mcskin import mcskin
+# Filters
+
+from routers.filters.greyscale import greyscale

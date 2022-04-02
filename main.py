@@ -112,3 +112,7 @@ app.include_router(router=aborted)
 app.include_router(router=bongocat)
 app.include_router(router=surprised)
 app.include_router(router=abandon)
+
+
+# Filters
+app.include_router(router=greyscale)

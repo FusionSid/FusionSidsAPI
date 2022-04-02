@@ -10,11 +10,11 @@ from utils import update_stats, get_url_image
 tags_metadata = [
     {
         "name": "Greyscale Filter",
-
     }
 ]
 
 greyscale = APIRouter(tags=tags_metadata)
+
 
 async def generate_image(image_url):
     image = await get_url_image(image_url)
@@ -30,7 +30,12 @@ async def generate_image(image_url):
 
     return img
 
-@greyscale.get("/api/filter/greyscale",responses={200: {"content": {"image/png": {}}}},response_class=StreamingResponse,)
+
+@greyscale.get(
+    "/api/filter/greyscale",
+    responses={200: {"content": {"image/png": {}}}},
+    response_class=StreamingResponse,
+)
 @update_stats(name="greyscale_filter")
 async def gen_grey_filter(image_url: str):
     """

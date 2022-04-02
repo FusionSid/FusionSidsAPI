@@ -10,14 +10,14 @@ from utils import update_stats, get_url_image
 tags_metadata = [
     {
         "name": "Blur Filter",
-
     }
 ]
 
 blur = APIRouter(tags=tags_metadata)
 
+
 async def generate_image(image_url, amount):
-    photo = await get_url_image(image_url) 
+    photo = await get_url_image(image_url)
     photo = BytesIO(photo)
     photo = Image.open(photo)
 
@@ -29,9 +29,14 @@ async def generate_image(image_url, amount):
 
     return return_img
 
-@blur.get("/api/filter/blur",responses={200: {"content": {"image/png": {}}}},response_class=StreamingResponse,)
+
+@blur.get(
+    "/api/filter/blur",
+    responses={200: {"content": {"image/png": {}}}},
+    response_class=StreamingResponse,
+)
 @update_stats(name="blur_filter")
-async def gen_blur_filter(image_url: str, amount : int = 5):
+async def gen_blur_filter(image_url: str, amount: int = 5):
     """Puts a blur filter on an image"""
 
     file = await generate_image(image_url, amount)

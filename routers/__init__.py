@@ -46,3 +46,4 @@ from routers.stats import stats
 from routers.filters.greyscale import greyscale
 from routers.filters.blur import blur
 from routers.filters.contour import contour
+from routers.filters.color import color

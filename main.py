@@ -117,4 +117,5 @@ app.include_router(router=abandon)
 # Filters
 app.include_router(router=greyscale)
 app.include_router(router=blur)
+app.include_router(router=color)
 app.include_router(router=contour)

@@ -7,6 +7,8 @@ import platform
 from fastapi import APIRouter
 from dotenv import load_dotenv
 
+from utils import get_lines
+
 load_dotenv()
 
 db_url = os.environ["DATABASE_URL"]
@@ -75,5 +77,6 @@ async def get_stats():
     return {
         "uptime" : time,
         "stats" : stat_data,
-        "system_stats" : system_data
+        "system_stats" : system_data,
+        "lines" : (await get_lines())
     }

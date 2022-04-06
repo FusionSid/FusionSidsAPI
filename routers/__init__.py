@@ -5,6 +5,7 @@ from routers.image.trash import trash
 from routers.image.affect import affect
 from routers.image.wanted import wanted
 from routers.image.abandon import abandon
+from routers.image.balloon import balloon
 from routers.image.aborted import aborted
 from routers.image.bongocat import bongocat
 from routers.image.brazzers import brazzers

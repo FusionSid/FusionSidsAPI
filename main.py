@@ -88,6 +88,7 @@ app.include_router(router=truth_or_dare)
 app.include_router(router=searchreddit)
 app.include_router(router=get_colors)
 app.include_router(router=mcskin)
+app.include_router(router=balloon)
 
 # Text
 app.include_router(router=fontconvert)

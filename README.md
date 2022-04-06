@@ -13,6 +13,9 @@
 
 ### [API URL](https://fusionsidapi.herokuapp.com/api)
 
+
+You can also use this: http://api.fusionsid.xyz/docs (does not have https though)
+
 ---
 
 ### Need Help:

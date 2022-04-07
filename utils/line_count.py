@@ -37,8 +37,9 @@ async def get_lines() -> int:
 
     for file in file_list:
         file = file.lstrip("./")
-
-        with open(file) as f:
-            lines += len(list(f))
-
+        try:
+            with open(file) as f:
+                lines += len(list(f))
+        except:
+            continue
     return lines

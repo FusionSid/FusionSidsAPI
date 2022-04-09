@@ -11,6 +11,7 @@ from routers.image.bongocat import bongocat
 from routers.image.brazzers import brazzers
 from routers.image.violence import violence
 from routers.image.surprised import surprised
+from routers.image.changemymind import changemymind
 
 
 # Other Endpoints

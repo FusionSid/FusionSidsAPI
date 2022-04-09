@@ -2,6 +2,7 @@
 from routers.image.gun import gun
 from routers.image.armor import armor
 from routers.image.trash import trash
+from routers.image.brain import brain
 from routers.image.affect import affect
 from routers.image.wanted import wanted
 from routers.image.abandon import abandon

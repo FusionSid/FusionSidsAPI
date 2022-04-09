@@ -14,6 +14,7 @@ from routers.image.brazzers import brazzers
 from routers.image.violence import violence
 from routers.image.surprised import surprised
 from routers.image.changemymind import changemymind
+from routers.image.expandingwwe import expandingwwe
 
 
 # Other Endpoints

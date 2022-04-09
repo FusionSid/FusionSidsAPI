@@ -7,7 +7,7 @@ import platform
 from fastapi import APIRouter
 from dotenv import load_dotenv
 
-from utils import get_lines
+from utils import get_lines, db_conn
 
 load_dotenv()
 
@@ -43,18 +43,17 @@ async def get_uptime():
 
 
 async def get_stats_from_db():
-    connection = await asyncpg.connect(db_url)
 
-    data = await connection.fetch("SELECT * FROM Stats")
+    async with db_conn(db_url) as connection:
 
-    return_dict = {
+        data = await connection.fetch("SELECT * FROM Stats")
 
-    }
+        return_dict = {
 
-    for record in data:
-        return_dict[record[0]] = record[1]
+        }
 
-    await connection.close()
+        for record in data:
+            return_dict[record[0]] = record[1]
 
     return return_dict
 

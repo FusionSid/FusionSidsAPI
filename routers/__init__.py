@@ -1,5 +1,6 @@
 # Image Endpoints:
 from routers.image.gun import gun
+from routers.image.boo import boo
 from routers.image.armor import armor
 from routers.image.trash import trash
 from routers.image.brain import brain

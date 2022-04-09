@@ -91,6 +91,7 @@ app.include_router(router=mcskin)
 app.include_router(router=balloon)
 app.include_router(router=changemymind)
 app.include_router(router=brain)
+app.include_router(router=boo)
 
 # Text
 app.include_router(router=fontconvert)

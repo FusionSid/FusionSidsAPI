@@ -17,7 +17,6 @@ from routers.image.surprised import surprised
 from routers.image.changemymind import changemymind
 from routers.image.expandingwwe import expandingwwe
 
-
 # Other Endpoints
 from routers.other.fact import fact
 from routers.other.roast import roast

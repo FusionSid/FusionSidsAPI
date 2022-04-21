@@ -7,14 +7,14 @@
 
 ---
 
-### [Base URL (Redirects you to the docs)](https://fusionsidapi.herokuapp.com/)
+### [Base URL (Redirects you to the docs)](https://api.fusionsid.xyz/)
 
-### [API Docs](https://fusionsidapi.herokuapp.com/docs/)
+### [API Docs](https://api.fusionsid.xyz/docs)
 
-### [API URL](https://fusionsidapi.herokuapp.com/api)
+### [API URL](https://api.fusionsid.xyz/api)
 
 
-You can also use this: http://api.fusionsid.xyz/docs (does not have https though)
+you can also use https://fusionsidapi.herokuapp.com/ instead of https://api.fusionsid.xyz/docs if you want
 
 ---
 

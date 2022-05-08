@@ -1,4 +1,5 @@
 from io import BytesIO
+import os
 
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
@@ -9,7 +10,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 op = webdriver.ChromeOptions()
 op.add_argument('headless')
-driver = webdriver.Chrome("chromedriver", options=op)
+cwd = os.getcwd()
+print(cwd)
+driver = webdriver.Chrome(f"{cwd}/chromedriver", options=op)
 
 # Title for docs
 tags_metadata = [

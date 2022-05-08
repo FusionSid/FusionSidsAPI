@@ -29,6 +29,7 @@ from routers.other.compliment import compliment
 from routers.other.get_colors import get_colors
 from routers.other.reddit_search import searchreddit
 from routers.other.truth_or_dare import truth_or_dare
+from routers.other.screenshot import screenshot
 
 
 # Text

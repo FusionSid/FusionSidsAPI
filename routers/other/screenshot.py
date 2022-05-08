@@ -12,7 +12,7 @@ op = webdriver.ChromeOptions()
 op.add_argument('headless')
 cwd = os.getcwd()
 print(cwd)
-driver = webdriver.Chrome(f"{cwd}/chromedriver", options=op)
+driver = webdriver.Chrome(executable_path=f"{cwd}/chromedriver", options=op)
 
 # Title for docs
 tags_metadata = [

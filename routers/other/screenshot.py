@@ -9,7 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 op = webdriver.ChromeOptions()
 op.add_argument('headless')
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=op)
+driver = webdriver.Chrome("chromedriver", options=op)
 
 # Title for docs
 tags_metadata = [

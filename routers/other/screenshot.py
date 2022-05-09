@@ -7,12 +7,16 @@ from fastapi.responses import StreamingResponse
 from utils import update_stats
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+import dotenv
 
-op = webdriver.ChromeOptions()
-op.add_argument('headless')
-cwd = os.getcwd()
-print(cwd)
-driver = webdriver.Chrome(executable_path=f"{cwd}/chromedriver", options=op)
+dotenv.load_dotenv()
+
+option = webdriver.ChromeOptions()
+option.binary_location = os.getenv('GOOGLE_CHROME_BIN')
+option.add_argument("--headless")
+option.add_argument('--disable-gpu')
+option.add_argument('--no-sandbox')
+driver= webdriver.Chrome(executable_path=os.environ('CHROME_EXECUTABLE_PATH'), options=option)
 
 # Title for docs
 tags_metadata = [

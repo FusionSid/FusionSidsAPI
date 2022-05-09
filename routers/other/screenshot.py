@@ -12,11 +12,11 @@ import dotenv
 dotenv.load_dotenv()
 
 option = webdriver.ChromeOptions()
-option.binary_location = os.getenv('GOOGLE_CHROME_BIN')
+option.binary_location = os.environ['GOOGLE_CHROME_BIN']
 option.add_argument("--headless")
 option.add_argument('--disable-gpu')
 option.add_argument('--no-sandbox')
-driver= webdriver.Chrome(executable_path=os.environ('CHROME_EXECUTABLE_PATH'), options=option)
+driver= webdriver.Chrome(executable_path=os.environ['CHROME_EXECUTABLE_PATH'], options=option)
 
 # Title for docs
 tags_metadata = [

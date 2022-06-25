@@ -32,6 +32,7 @@ app = FastAPI(
         "name": "MIT",
         "url": "https://opensource.org/licenses/MIT",
     },
+    redoc_url=None
 )
 
 
